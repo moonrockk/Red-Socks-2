@@ -205,7 +205,7 @@ static void socks5_read_assoc_reply(struct bufferevent *buffev, void *_arg)
 	}
 
 	if (reply.h.ver != socks5_ver) {
-		redudp_log_error(client, LOG_NOTICE, "Socks5 server reported unexpected reply version: %u", reply);
+		redudp_log_error(client, LOG_NOTICE, "Socks5 server reported unexpected reply version: %u", reply.ip.port);
 		goto fail;
 	}
 
